@@ -63,7 +63,7 @@ cp .env.example .env
 
 ```bash
 # Usando o script de menu (recomendado)
-bash sdr.sh
+bash fainder.sh
 
 # Ou direto com Docker
 docker compose up -d
@@ -156,7 +156,7 @@ cd frontend && npm install && npm run dev
 │       ├── lib/          # axios wrapper
 │       └── types/
 ├── docker-compose.yml
-├── sdr.sh                # Script de gerenciamento do ambiente
+├── fainder.sh            # Script de gerenciamento do ambiente
 └── .env.example
 ```
 
