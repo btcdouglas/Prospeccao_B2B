@@ -11,7 +11,7 @@ from app.models import Campaign, Lead  # noqa: F401 — registra modelos no SQLM
 
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="SDR AI-Augmented API", version="0.1.0")
+app = FastAPI(title="B2B f.AInder API", version="0.1.0")
 
 app.add_middleware(
     CORSMiddleware,

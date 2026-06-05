@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-echo "=== Criando estrutura do projeto SDR AI-Augmented ==="
+echo "=== Criando estrutura do projeto B2B f.AInder ==="
 mkdir -p .claude
 mkdir -p backend/app/{api,core,models,schemas,services,agents,tasks}
 mkdir -p backend/tests/{unit,integration}
@@ -39,7 +39,7 @@ uploads/
 EOF
 echo "[2/10] .env.example..."
 cat > .env.example << 'EOF'
-DATABASE_URL=postgresql://sdr:sdr_password@localhost:5432/sdr_db
+DATABASE_URL=postgresql://fainder:fainder_pass@localhost:5432/fainder_db
 REDIS_URL=redis://localhost:6379/0
 SECRET_KEY=CHANGE_THIS_MIN_32_CHARS
 ANTHROPIC_API_KEY=
@@ -56,12 +56,12 @@ services:
     image: postgres:16-alpine
     ports: ["5432:5432"]
     environment:
-      POSTGRES_DB: sdr_db
-      POSTGRES_USER: sdr
-      POSTGRES_PASSWORD: sdr_password
+      POSTGRES_DB: fainder_db
+      POSTGRES_USER: fainder
+      POSTGRES_PASSWORD: fainder_pass
     volumes: [postgres_data:/var/lib/postgresql/data]
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U sdr"]
+      test: ["CMD-SHELL", "pg_isready -U fainder"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -73,7 +73,7 @@ services:
     build: {context: ./backend, dockerfile: Dockerfile}
     ports: ["8000:8000"]
     environment:
-      - DATABASE_URL=postgresql://sdr:sdr_password@postgres:5432/sdr_db
+      - DATABASE_URL=postgresql://fainder:fainder_pass@postgres:5432/fainder_db
       - REDIS_URL=redis://redis:6379/0
     volumes: [./backend:/app]
     depends_on:
@@ -89,7 +89,7 @@ services:
   celery-worker:
     build: {context: ./backend, dockerfile: Dockerfile}
     environment:
-      - DATABASE_URL=postgresql://sdr:sdr_password@postgres:5432/sdr_db
+      - DATABASE_URL=postgresql://fainder:fainder_pass@postgres:5432/fainder_db
       - REDIS_URL=redis://redis:6379/0
     volumes: [./backend:/app]
     depends_on: [postgres, redis, backend]
@@ -105,7 +105,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "sdr-ai-agent"
+name = "b2b-fainder"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
@@ -143,7 +143,7 @@ EOF
 echo "[6/10] frontend/package.json..."
 cat > frontend/package.json << 'EOF'
 {
-  "name": "sdr-frontend",
+  "name": "b2b-fainder",
   "version": "0.1.0",
   "private": true,
   "scripts": {"dev": "next dev", "build": "next build", "start": "next start", "lint": "next lint"},
@@ -183,7 +183,7 @@ touch backend/app/tasks/__init__.py
 touch backend/tests/__init__.py
 echo "[9/10] README files..."
 cat > README.md << 'EOF'
-# SDR AI-Augmented
+# B2B f.AInder
 ## Quick Start
 cp .env.example .env
 docker-compose up -d

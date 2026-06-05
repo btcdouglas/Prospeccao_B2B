@@ -1,10 +1,10 @@
-# CLAUDE.md — Projeto SDR AI-Augmented
+# CLAUDE.md — Projeto B2B f.AInder
 
 ## Visão Geral do Projeto
 Sistema de prospecção B2B híbrida (AI + humano) para geração de leads qualificados.
 **Não é cold email 100% automatizado** — conversão típica: 8–15% vs 0.5–2% de automação pura.
 
-**Objetivo final:** Executar atividades de SDR Senior (pesquisa, qualificação, primeiro contato) 
+**Objetivo final:** Executar atividades de prospecção sênior (pesquisa, qualificação, primeiro contato) 
 com supervisão humana para qualificação final e fechamento.
 
 ## Stack Tecnológica
@@ -97,14 +97,14 @@ qualificado = has_budget and has_authority and has_need and has_timeline
 # has_authority: role in ["CTO", "VP Engenharia", "Head Infra"]
 ```
 
-### O que Agente SDR faz (AUTOMÁTICO)
+### O que o f.AInder faz (AUTOMÁTICO)
 1. Scraping inteligente (LinkedIn, Crunchbase, GitHub)
 2. Enriquecimento de dados (Clearbit, Apollo, Hunter.io)
 3. Personalização de email (LLM gera copy única)
 4. Follow-up automático (3–5 emails, 3–5 dias)
 5. Agendamento (Calendly integration)
 
-### O que Agente SDR NÃO faz (HUMANO faz)
+### O que o f.AInder NÃO faz (HUMANO faz)
 1. Qualificação final (confirmar budget, autoridade real)
 2. Negociação (preço, escopo, contrato)
 3. Fechamento (assinatura, pagamento)

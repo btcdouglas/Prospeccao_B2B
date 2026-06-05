@@ -14,7 +14,7 @@ export default function Nav() {
   return (
     <nav className="border-b border-gray-800 bg-gray-900 px-6 py-0">
       <div className="flex items-center gap-8">
-        <span className="py-4 text-sm font-bold tracking-wide text-white">SDR AI</span>
+        <span className="py-4 text-sm font-bold tracking-wide text-white">B2B f.AInder</span>
         <div className="flex">
           {links.map((l) => (
             <Link

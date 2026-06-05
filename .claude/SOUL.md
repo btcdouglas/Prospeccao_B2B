@@ -1,4 +1,4 @@
-# SOUL.md — Alma do Projeto SDR AI-Augmented
+# SOUL.md — Alma do Projeto B2B f.AInder
 
 ## Por que este projeto existe
 
@@ -18,7 +18,7 @@
 ## O que este projeto NÃO é
 
 - ❌ Não é ferramenta de spam/cold email em massa
-- ❌ Não é substituto completo de SDR humano
+- ❌ Não é substituto completo do profissional de prospecção humano
 - ❌ Não é sistema "set and forget"
 - ❌ Não é solução mágica
 

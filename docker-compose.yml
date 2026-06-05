@@ -1,24 +1,24 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: sdr_postgres
+    container_name: fainder_postgres
     environment:
-      POSTGRES_DB: sdr_db
-      POSTGRES_USER: sdr
-      POSTGRES_PASSWORD: sdr_password
+      POSTGRES_DB: fainder_db
+      POSTGRES_USER: fainder
+      POSTGRES_PASSWORD: fainder_pass
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U sdr -d sdr_db"]
+      test: ["CMD-SHELL", "pg_isready -U fainder -d fainder_db"]
       interval: 5s
       timeout: 5s
       retries: 10
 
   redis:
     image: redis:7-alpine
-    container_name: sdr_redis
+    container_name: fainder_redis
     ports:
       - "6379:6379"
     volumes:
@@ -32,11 +32,11 @@ services:
   backend:
     build:
       context: ./backend
-    container_name: sdr_backend
+    container_name: fainder_backend
     env_file:
       - ./.env
     environment:
-      DATABASE_URL: postgresql://sdr:sdr_password@postgres:5432/sdr_db
+      DATABASE_URL: postgresql://fainder:fainder_pass@postgres:5432/fainder_db
       REDIS_URL: redis://redis:6379/0
     ports:
       - "8000:8000"
@@ -49,12 +49,12 @@ services:
   celery-worker:
     build:
       context: ./backend
-    container_name: sdr_celery
+    container_name: fainder_celery
     command: uv run celery -A app.core.celery_app worker --loglevel=info
     env_file:
       - ./.env
     environment:
-      DATABASE_URL: postgresql://sdr:sdr_password@postgres:5432/sdr_db
+      DATABASE_URL: postgresql://fainder:fainder_pass@postgres:5432/fainder_db
       REDIS_URL: redis://redis:6379/0
     depends_on:
       postgres:
@@ -65,7 +65,7 @@ services:
   frontend:
     build:
       context: ./frontend
-    container_name: sdr_frontend
+    container_name: fainder_frontend
     env_file:
       - ./.env
     ports:

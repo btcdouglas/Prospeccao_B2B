@@ -1,4 +1,4 @@
-# ROADMAP.md — Milestones do Projeto SDR AI-Augmented
+# ROADMAP.md — Milestones do Projeto B2B f.AInder
 
 ## Fase 0: Setup (Dia 1–2)
 - [x] Criar repositório

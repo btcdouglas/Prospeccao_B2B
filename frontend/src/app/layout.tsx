@@ -3,7 +3,7 @@ import './globals.css'
 import Nav from '@/components/Nav'
 
 export const metadata: Metadata = {
-  title: 'SDR AI-Augmented',
+  title: 'B2B f.AInder',
   description: 'Prospecção B2B inteligente',
 }
 

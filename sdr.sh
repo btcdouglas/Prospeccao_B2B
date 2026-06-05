@@ -13,7 +13,7 @@ PROJECT_DIR="/Users/douglasbittencourt/Library/CloudStorage/GoogleDrive-btc.doug
 clear
 echo ""
 echo -e "${BOLD}╔══════════════════════════════════════╗${NC}"
-echo -e "${BOLD}║       SDR AI-Augmented — B2B         ║${NC}"
+echo -e "${BOLD}║          B2B f.AInder                ║${NC}"
 echo -e "${BOLD}╚══════════════════════════════════════╝${NC}"
 echo ""
 echo -e "  ${GREEN}1)${NC} Ligar o sistema"

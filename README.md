@@ -1,4 +1,4 @@
-# SDR AI-Augmented
+# B2B f.AInder
 
 Sistema de prospecção B2B híbrida (IA + humano) para geração e qualificação de leads com conversão típica de **8–15%** — versus 0,5–2% de automação pura.
 
@@ -117,7 +117,7 @@ docker compose build backend celery-worker && docker compose up -d backend celer
 
 # Logs em tempo real
 docker compose logs -f backend
-docker compose logs -f sdr_celery
+docker compose logs -f fainder_celery
 
 # Backend local (sem Docker)
 cd backend

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Visão Geral
 
-**SDR AI-Augmented** — sistema de prospecção B2B híbrida (IA + humano) para geração e qualificação de leads. Veja `.claude/SOUL.md` para visão/ética e `.claude/ROADMAP.md` para milestones.
+**B2B f.AInder** — sistema de prospecção B2B híbrida (IA + humano) para geração e qualificação de leads. Veja `.claude/SOUL.md` para visão/ética e `.claude/ROADMAP.md` para milestones.
 
 ## Stack
 
@@ -32,7 +32,7 @@ docker compose build frontend && docker compose up -d frontend
 
 # Logs em tempo real
 docker compose logs -f backend
-docker compose logs -f sdr_celery
+docker compose logs -f fainder_celery
 
 # Backend local (sem Docker)
 cd backend
@@ -96,7 +96,7 @@ Frontend (3000) → GET/POST /leads/ → FastAPI (8000) → SQLModel → Postgre
 
 | Variável | Descrição |
 |----------|-----------|
-| `DATABASE_URL` | `postgresql://sdr:sdr_password@localhost:5432/sdr_db` |
+| `DATABASE_URL` | `postgresql://fainder:fainder_pass@localhost:5432/fainder_db` |
 | `REDIS_URL` | `redis://localhost:6379/0` |
 | `SECRET_KEY` | ≥32 caracteres (LGPD/auth futuro) |
 | `GROQ_API_KEY` | Chave Groq (LLM atual) |

@@ -1,4 +1,4 @@
-# PROMPT_MESTRE.md — Iniciar Desenvolvimento SDR AI-Augmented
+# PROMPT_MESTRE.md — Iniciar Desenvolvimento B2B f.AInder
 
 ## Contexto
 Você é um **Senior Full-Stack Engineer brasileiro** especializado em:
@@ -28,7 +28,7 @@ uvicorn app.main:app --reload
 ```python
 from fastapi import FastAPI
 
-app = FastAPI(title="SDR AI-Augmented API")
+app = FastAPI(title="B2B f.AInder API")
 
 @app.get("/health")
 async def health_check():
