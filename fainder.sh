@@ -31,12 +31,23 @@ case "$choice" in
 
     # Abre Docker Desktop em segundo plano se não estiver rodando
     if ! docker info &>/dev/null 2>&1; then
-      echo -e "${YELLOW}  → Abrindo Docker Desktop (segundo plano)...${NC}"
-      open -g -a Docker
-      echo -n "  → Aguardando Docker iniciar"
+      echo -e "${YELLOW}  → Abrindo Docker Desktop...${NC}"
+      open -a Docker
+      echo -n "  → Aguardando Docker iniciar (pode levar ~30s)"
+      WAIT=0
+      MAX=90
+      sleep 5
       until docker info &>/dev/null 2>&1; do
         echo -n "."
-        sleep 2
+        sleep 3
+        WAIT=$((WAIT + 3))
+        if [ $WAIT -ge $MAX ]; then
+          echo ""
+          echo -e "${RED}✗ Docker não iniciou após ${MAX}s. Abra o Docker Desktop manualmente e tente novamente.${NC}"
+          echo ""
+          read -rp "  Pressione Enter para fechar..." _
+          exit 1
+        fi
       done
       echo -e " ${GREEN}OK${NC}"
     else
