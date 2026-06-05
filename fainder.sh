@@ -67,6 +67,7 @@ case "$choice" in
       echo -e "  Frontend  →  ${BLUE}http://localhost:3000${NC}"
       echo -e "  Backend   →  ${BLUE}http://localhost:8000${NC}"
       echo -e "  API Docs  →  ${BLUE}http://localhost:8000/docs${NC}"
+      osascript -e 'tell application "System Events" to set visible of process "Docker Desktop" to false' 2>/dev/null || true
     else
       echo ""
       echo -e "${RED}✗ Erro ao subir containers. Veja os logs abaixo:${NC}"
