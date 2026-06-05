@@ -52,8 +52,8 @@ Scraping → Enriquecimento → Qualificação BANT → [Humano valida] → Emai
 ### 1. Clonar e configurar
 
 ```bash
-git clone https://github.com/btcdouglas/sdr-ai-augmented.git
-cd sdr-ai-augmented
+git clone https://github.com/btcdouglas/Prospeccao_B2B.git
+cd Prospeccao_B2B
 
 cp .env.example .env
 # Edite .env com suas chaves de API
